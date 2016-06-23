@@ -37,7 +37,7 @@ public class SimplifyReaderApplication extends YoukuPlayerBaseApplication {
     public void onCreate() {
         super.onCreate();
         MobclickAgent.setDebugMode(true);
-        MobclickAgent.updateOnlineConfig(this);
+//        MobclickAgent.updateOnlineConfig(this);
         MobclickAgent.openActivityDurationTrack(false);
         UmengUpdateAgent.update(this);
 
