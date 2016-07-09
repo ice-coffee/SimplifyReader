@@ -80,7 +80,7 @@ public class GsonRequest<T> extends Request<T> {
         try {
             String jsonString = new String(response.data,
                     HttpHeaderParser.parseCharset(response.headers));
-            TLog.d(TAG, "response ---> " + jsonString);
+            TLog.d("response ---> " + jsonString);
             return Response.success((T) mGson.fromJson(jsonString, mType), HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new VolleyError(e));

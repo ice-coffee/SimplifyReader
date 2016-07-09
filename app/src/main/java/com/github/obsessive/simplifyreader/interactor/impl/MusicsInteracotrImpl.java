@@ -43,7 +43,7 @@ public class MusicsInteracotrImpl implements MusicsInteractor {
 
     @Override
     public void getMusicListData(String requestTag, String keywords, final int event_tag) {
-        TLog.d(requestTag, UriHelper.getInstance().getDoubanPlayListUrl(keywords));
+        TLog.d(UriHelper.getInstance().getDoubanPlayListUrl(keywords));
         GsonRequest<ResponseMusicsListentity> gsonRequest = new GsonRequest<ResponseMusicsListentity>(
                 UriHelper.getInstance().getDoubanPlayListUrl(keywords),
                 null,

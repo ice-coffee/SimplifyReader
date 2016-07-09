@@ -43,7 +43,7 @@ public class VideosListInteractorImpl implements CommonListInteractor {
 
     @Override
     public void getCommonListData(final String requestTag, final int event_tag, String keywords, int page) {
-        TLog.d(requestTag, UriHelper.getInstance().getVideosListUrl(keywords, page));
+        TLog.d(UriHelper.getInstance().getVideosListUrl(keywords, page));
 
         GsonRequest<ResponseVideosListEntity> gsonRequest = new GsonRequest<ResponseVideosListEntity>(
                 UriHelper.getInstance().getVideosListUrl(keywords, page),

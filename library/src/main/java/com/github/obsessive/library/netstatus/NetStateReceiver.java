@@ -58,10 +58,10 @@ public class NetStateReceiver extends BroadcastReceiver {
         mBroadcastReceiver = NetStateReceiver.this;
         if (intent.getAction().equalsIgnoreCase(ANDROID_NET_CHANGE_ACTION) || intent.getAction().equalsIgnoreCase(CUSTOM_ANDROID_NET_CHANGE_ACTION)) {
             if (!NetUtils.isNetworkAvailable(context)) {
-                TLog.i(TAG, "<--- network disconnected --->");
+                TLog.i("<--- network disconnected --->");
                 isNetAvailable = false;
             } else {
-                TLog.i(TAG, "<--- network connected --->");
+                TLog.i("<--- network connected --->");
                 isNetAvailable = true;
                 mNetType = NetUtils.getAPNType(context);
             }
@@ -87,7 +87,7 @@ public class NetStateReceiver extends BroadcastReceiver {
             try {
                 mContext.getApplicationContext().unregisterReceiver(mBroadcastReceiver);
             } catch (Exception e) {
-                TLog.d(TAG, e.getMessage());
+                TLog.d(e.getMessage());
             }
         }
 

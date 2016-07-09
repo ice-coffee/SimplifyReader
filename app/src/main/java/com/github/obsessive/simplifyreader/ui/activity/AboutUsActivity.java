@@ -168,7 +168,7 @@ public class AboutUsActivity extends BaseSwipeBackActivity {
                 DecodeUtils decodeUtils = new DecodeUtils(DecodeUtils.DECODE_DATA_MODE_ALL);
                 String url = decodeUtils.decodeWithZxing(BitmapFactory.decodeResource(getResources(), R.drawable.pay_qrcode));
                 if (!CommonUtils.isEmpty(url)) {
-                    TLog.d(TAG_LOG, url);
+                    TLog.e(url);
                     intent.setData(Uri.parse(url));
                 }
                 startActivity(intent);

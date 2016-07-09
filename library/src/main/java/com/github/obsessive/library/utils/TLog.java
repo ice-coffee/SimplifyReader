@@ -16,7 +16,7 @@
 
 package com.github.obsessive.library.utils;
 
-import android.util.Log;
+import com.orhanobut.logger.Logger;
 
 /**
  * Author:  Tau.Chen
@@ -47,83 +47,55 @@ public class TLog {
     /**
      * Debug
      *
-     * @param tag
      * @param msg
      */
-    public static void d(String tag, String msg) {
+    public static void d(String msg) {
         if (isLogEnable) {
-            StackTraceElement stackTraceElement = java.lang.Thread.currentThread().getStackTrace()[3];
-            Log.d(tag, rebuildMsg(stackTraceElement, msg));
+            Logger.d(msg);
         }
     }
 
     /**
      * Information
      *
-     * @param tag
      * @param msg
      */
-    public static void i(String tag, String msg) {
+    public static void i(String msg) {
         if (isLogEnable) {
-            StackTraceElement stackTraceElement = java.lang.Thread.currentThread().getStackTrace()[3];
-            Log.i(tag, rebuildMsg(stackTraceElement, msg));
+            Logger.i(msg);
         }
     }
 
     /**
      * Verbose
      *
-     * @param tag
      * @param msg
      */
-    public static void v(String tag, String msg) {
+    public static void v(String msg) {
         if (isLogEnable) {
-            StackTraceElement stackTraceElement = java.lang.Thread.currentThread().getStackTrace()[3];
-            Log.v(tag, rebuildMsg(stackTraceElement, msg));
+            Logger.v(msg);
         }
     }
 
     /**
      * Warning
      *
-     * @param tag
      * @param msg
      */
-    public static void w(String tag, String msg) {
+    public static void w(String msg) {
         if (isLogEnable) {
-            StackTraceElement stackTraceElement = java.lang.Thread.currentThread().getStackTrace()[3];
-            Log.w(tag, rebuildMsg(stackTraceElement, msg));
+            Logger.w(msg);
         }
     }
 
     /**
      * Error
      *
-     * @param tag
      * @param msg
      */
-    public static void e(String tag, String msg) {
+    public static void e(String msg) {
         if (isLogEnable) {
-            StackTraceElement stackTraceElement = java.lang.Thread.currentThread().getStackTrace()[3];
-            Log.e(tag, rebuildMsg(stackTraceElement, msg));
+            Logger.e(msg);
         }
-    }
-
-    /**
-     * Rebuild Log Msg
-     *
-     * @param msg
-     * @return
-     */
-    private static String rebuildMsg(StackTraceElement stackTraceElement, String msg) {
-        StringBuffer sb = new StringBuffer();
-        sb.append(stackTraceElement.getFileName());
-        sb.append(" (");
-        sb.append(stackTraceElement.getLineNumber());
-        sb.append(") ");
-        sb.append(stackTraceElement.getMethodName());
-        sb.append(": ");
-        sb.append(msg);
-        return sb.toString();
     }
 }

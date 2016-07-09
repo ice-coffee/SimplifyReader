@@ -90,7 +90,7 @@ public final class DecodeHandler extends Handler {
             activity.initCrop();
         }
         cropRect = activity.getCropRect();
-        TLog.d(TAG, cropRect.toString());
+        TLog.d(cropRect.toString());
 
         mDecodeUtils.setDataMode(activity.getDataMode());
 

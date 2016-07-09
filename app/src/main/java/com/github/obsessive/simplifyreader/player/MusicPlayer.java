@@ -257,7 +257,7 @@ public class MusicPlayer implements OnCompletionListener, OnErrorListener, OnBuf
 
     @Override
     public void onCompletion(MediaPlayer mp) {
-        TLog.i(TAG, "mPLayMode = " + mPLayMode);
+        TLog.i("mPLayMode = " + mPLayMode);
         switch (mPLayMode) {
             case MusicPlayMode.MPM_SINGLE_LOOP_PLAY:
                 play(mCurPlayIndex);
@@ -295,13 +295,13 @@ public class MusicPlayer implements OnCompletionListener, OnErrorListener, OnBuf
 
     @Override
     public boolean onError(MediaPlayer mp, int what, int extra) {
-        TLog.e(TAG, "MusicPlayer		onError!!!\n");
+        TLog.e("MusicPlayer		onError!!!\n");
         return false;
     }
 
     @Override
     public void onBufferingUpdate(MediaPlayer mp, int percent) {
-        TLog.d(TAG, "second percent --> " + percent);
+        TLog.d("second percent --> " + percent);
         if (percent < 100) {
             Intent intent = new Intent();
             intent.setAction(Constants.ACTION_MUSIC_SECOND_PROGRESS_BROADCAST);
